@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard - AI Blood Donor Finder</title>
+    <meta name="description" content="Hospital dashboard for blood inventory management and demand forecasting.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="preloader"><div class="preloader-content"><div class="heartbeat"><i class="fas fa-heartbeat"></i></div><p>Saving Lives...</p></div></div>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo"><i class="fas fa-heartbeat"></i><span>BloodFinder</span></a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="hospital-dashboard.html" class="nav-link active">Hospital Dashboard</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Logout</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+    <section class="dashboard" style="padding-top: 6rem;">
+        <div class="container">
+            <div class="dashboard-container">
+                <div class="dashboard-sidebar">
+                    <div style="text-align: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--gray-light);">
+                        <i class="fas fa-hospital" style="font-size: 3rem; color: var(--secondary); margin-bottom: 0.5rem;"></i>
+                        <h3 style="color: var(--dark);">Apollo Hospital</h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Mumbai, India</p>
+                    </div>
+                    <div class="dashboard-nav">
+                        <a href="#overview" class="nav-link active">Overview</a>
+                        <a href="#inventory" class="nav-link">Blood Inventory</a>
+                        <a href="#requests" class="nav-link">Blood Requests</a>
+                        <a href="#analytics" class="nav-link">Analytics</a>
+                        <a href="#settings" class="nav-link">Settings</a>
+                    </div>
+                </div>
+                <div class="dashboard-content">
+                    <div id="overview">
+                        <h2 style="color: var(--dark); margin-bottom: 1.5rem;">Hospital Dashboard</h2>
+                        <div class="dashboard-cards">
+                            <div class="dashboard-card">
+                                <div class="value">85</div>
+                                <div class="label">Total Units</div>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="value">12</div>
+                                <div class="label">Low Stock Alerts</div>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="value">42</div>
+                                <div class="label">Pending Requests</div>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="value">94%</div>
+                                <div class="label">AI Accuracy</div>
+                            </div>
+                        </div>
+                        <h3 style="color: var(--dark); margin: 2rem 0 1rem;">Blood Inventory</h3>
+                        <div class="hospital-blood-inventory" style="margin-bottom: 2rem;">
+                            <div class="blood-inventory-item"><div class="group">A+</div><div class="quantity">12 units</div></div>
+                            <div class="blood-inventory-item"><div class="group">A-</div><div class="quantity">8 units</div></div>
+                            <div class="blood-inventory-item"><div class="group">B+</div><div class="quantity">15 units</div></div>
+                            <div class="blood-inventory-item"><div class="group">B-</div><div class="quantity">5 units</div></div>
+                            <div class="blood-inventory-item"><div class="group">AB+</div><div class="quantity">3 units</div></div>
+                            <div class="blood-inventory-item"><div class="group">AB-</div><div class="quantity">2 units</div></div>
+                            <div class="blood-inventory-item"><div class="group">O+</div><div class="quantity">25 units</div></div>
+                            <div class="blood-inventory-item"><div class="group">O-</div><div class="quantity">8 units</div></div>
+                        </div>
+                        <h3 style="color: var(--dark); margin: 2rem 0 1rem;">Recent Blood Requests</h3>
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Blood Group</th>
+                                        <th>Units</th>
+                                        <th>Patient</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jul 22, 2024</td>
+                                        <td>O+</td>
+                                        <td>2</td>
+                                        <td>Rajesh Kumar</td>
+                                        <td><span class="status-badge status-pending">Pending</span></td>
+                                        <td><a href="#" class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Process</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jul 21, 2024</td>
+                                        <td>AB-</td>
+                                        <td>1</td>
+                                        <td>Priya Sharma</td>
+                                        <td><span class="status-badge status-completed">Completed</span></td>
+                                        <td><a href="#" class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">View</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jul 20, 2024</td>
+                                        <td>O-</td>
+                                        <td>3</td>
+                                        <td>Amit Patel</td>
+                                        <td><span class="status-badge status-rejected">Rejected</span></td>
+                                        <td><a href="#" class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">View</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><i class="fas fa-heartbeat"></i><span>BloodFinder</span></a>
+                    <p>AI-powered blood donor finder saving lives through technology and community.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="find-donor.html">Find Donor</a></li><li><a href="blood-request.html">Blood Request</a></li><li><a href="register.html">Register</a></li></ul></div>
+                <div class="footer-links"><h4>Resources</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Donation Guidelines</a></li></ul></div>
+                <div class="footer-links"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li><li><i class="fas fa-phone"></i> +91 1800-BLOOD-01</li><li><i class="fas fa-envelope"></i> info@bloodfinder.ai</li><li><i class="fas fa-clock"></i> 24/7 Emergency Support</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 BloodFinder AI. All rights reserved. | Made with <i class="fas fa-heart"></i> for humanity</p></div>
+        </div>
+    </footer>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="js/main.js"></script>
+</body>
+</html>

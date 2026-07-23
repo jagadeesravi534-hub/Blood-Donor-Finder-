@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Finder - Save Lives</title>
+    <meta name="description" content="Emergency blood donor finder with voice assistant. Find nearby donors, hospitals, and get emergency alerts.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="heartbeat">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <p>Saving Lives...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>BloodFinder</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="find-donor.html" class="nav-link">Find Donor</a></li>
+                <li class="nav-item"><a href="blood-request.html" class="nav-link">Blood Request</a></li>
+                <li class="nav-item"><a href="register.html" class="nav-link">Register</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Find Blood Donors <span class="highlight">Instantly</span></h1>
+                <p class="hero-subtitle">AI-powered emergency blood donor finder with voice assistance. Save lives in seconds.</p>
+                <div class="hero-buttons">
+                    <a href="find-donor.html" class="btn btn-primary">Find a Donor</a>
+                    <a href="register.html" class="btn btn-secondary">Become a Donor</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Registered Donors</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Lives Saved</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2min</span>
+                        <span class="stat-label">Avg Response</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <i class="fas fa-search"></i>
+                        <span>Search Blood Donors</span>
+                    </div>
+                    <form class="blood-search-form" id="hero-search-form">
+                        <div class="form-row">
+                <select class="form-select" id="hero-blood-group" aria-label="Select blood group">
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                            <input type="text" class="form-input" id="hero-location" placeholder="Enter location or pincode" required>
+                        </div>
+                        <button type="submit" class="btn btn-block btn-danger">Search Now</button>
+                    </form>
+                    <div class="voice-search">
+                        <button class="btn btn-voice" id="hero-voice-search">
+                            <i class="fas fa-microphone"></i> Voice Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg">
+            <div class="hero-bg-circle circle-1"></div>
+            <div class="hero-bg-circle circle-2"></div>
+            <div class="hero-bg-circle circle-3"></div>
+        </div>
+    </section>
+
+    <!-- Emergency Alert -->
+    <section class="emergency-alert" id="emergency">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="emergency-text">
+                    <h3>Emergency?</h3>
+                    <p>Need blood urgently? Get instant alerts to nearby donors.</p>
+                </div>
+                <button class="btn btn-emergency" id="emergency-btn">
+                    <i class="fas fa-bell"></i> Send Emergency Alert
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Our AI-powered platform connects donors and patients in real-time</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3>Find Donors Nearby</h3>
+                    <p>Search for compatible blood donors within your area using AI-powered matching algorithms.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Emergency Alerts</h3>
+                    <p>Send emergency alerts to nearby donors instantly when every second counts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Voice Assistant</h3>
+                    <p>Use voice commands to search for donors, request blood, and navigate the platform.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Fake Request Detection</h3>
+                    <p>AI-powered system detects and filters fake emergency requests to ensure authenticity.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Predictive Analytics</h3>
+                    <p>AI predicts blood demand and donor response rates for better resource planning.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Google Maps Integration</h3>
+                    <p>Find donors on interactive maps with real-time distance and directions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <section class="statistics section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Impact</h2>
+                <p class="section-subtitle">Making a difference in blood donation across the country</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">10,000+</div>
+                    <div class="stat-name">Lives Saved</div>
+                    <div class="stat-trend positive">
+                        <i class="fas fa-arrow-up"></i> 15% this year
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">50,000+</div>
+                    <div class="stat-name">Active Donors</div>
+                    <div class="stat-trend positive">
+                        <i class="fas fa-arrow-up"></i> 22% this year
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">98.5%</div>
+                    <div class="stat-name">Success Rate</div>
+                    <div class="stat-trend positive">
+                        <i class="fas fa-arrow-up"></i> 3% improvement
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">2 min</div>
+                    <div class="stat-name">Avg Response Time</div>
+                    <div class="stat-trend negative">
+                        <i class="fas fa-arrow-down"></i> 30s faster
+                    </div>
+                </div>
+            </div>
+            <div class="heatmap-container">
+                <h3>Blood Donation Heat Map</h3>
+                <div class="heatmap" id="heatmap">
+                    <!-- Heatmap will be rendered by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What People Say</h2>
+                <p class="section-subtitle">Hear from donors and patients whose lives were saved</p>
+            </div>
+            <div class="testimonials-slider" id="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://via.placeholder.com/60" alt="Patient" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Rajesh Kumar</h4>
+                            <span>Patient, Mumbai</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"I needed O- blood urgently after an accident. Within 15 minutes of posting a request, 3 donors responded. The AI matching was incredibly fast!"</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://via.placeholder.com/60" alt="Donor" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Priya Sharma</h4>
+                            <span>Regular Donor, Delhi</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"I've donated blood 12 times through this platform. The voice assistant makes it so easy to respond to emergency requests even while driving."</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://via.placeholder.com/60" alt="Hospital" class="testimonial-img">
+                        <div class="testimonial-info">
+                            <h4>Dr. Amit Patel</h4>
+                            <span>Chief Surgeon, Apollo Hospital</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"The hospital dashboard helps us track blood inventory and predict demand. The AI predictions have reduced our shortage incidents by 40%."</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Save a Life?</h2>
+                <p>Join thousands of donors and patients on our life-saving platform</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="btn btn-primary">Register as Donor</a>
+                    <a href="find-donor.html" class="btn btn-secondary">Find Blood</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-toggle" id="chatbot-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span>BloodBot AI</span>
+                </div>
+                <button class="chatbot-close" id="chatbot-close" aria-label="Close chatbot">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">
+                    Hello! I'm BloodBot, your AI assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input" placeholder="Type a message...">
+                <button id="chatbot-send" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Assistant -->
+    <div class="voice-assistant-container" id="voice-assistant-container">
+        <div class="voice-assistant-toggle" id="voice-assistant-toggle">
+            <i class="fas fa-microphone"></i>
+        </div>
+        <div class="voice-assistant-window" id="voice-assistant-window">
+            <div class="voice-header">
+                <div class="voice-title">
+                    <i class="fas fa-microphone"></i>
+                    <span>Voice Assistant</span>
+                </div>
+                <button class="voice-close" id="voice-close" aria-label="Close voice assistant">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="voice-content">
+                <div class="voice-status" id="voice-status">
+                    <i class="fas fa-microphone-slash"></i>
+                    <span>Not listening</span>
+                </div>
+                <div class="voice-transcript" id="voice-transcript">
+                    <p>Press the microphone and speak to use voice commands.</p>
+                </div>
+                <div class="voice-commands">
+                    <h4>Try saying:</h4>
+                    <ul>
+                        <li>"Find O+ blood in Mumbai"</li>
+                        <li>"Send emergency alert"</li>
+                        <li>"Show my donation history"</li>
+                        <li>"What is blood group AB-?"</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="voice-controls">
+                <button class="btn btn-voice-start" id="voice-start-btn">
+                    <i class="fas fa-microphone"></i> Start Listening
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>BloodFinder</span>
+                    </a>
+                    <p>AI-powered blood donor finder saving lives through technology and community.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="find-donor.html">Find Donor</a></li>
+                        <li><a href="blood-request.html">Blood Request</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Donation Guidelines</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91 1800-BLOOD-01</li>
+                        <li><i class="fas fa-envelope"></i> info@bloodfinder.ai</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Emergency Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BloodFinder AI. All rights reserved. | Made with <i class="fas fa-heart"></i> for humanity</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/services/authService.js"></script>
+    <script src="js/services/donorService.js"></script>
+    <script src="js/services/voiceService.js"></script>
+    <script src="js/components/chatbot.js"></script>
+    <script src="js/components/voiceAssistant.js"></script>
+    <script src="js/pages/home.js"></script>
+</body>
+</html>

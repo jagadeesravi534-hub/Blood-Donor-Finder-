@@ -1,0 +1,152 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request - AI Blood Donor Finder</title>
+    <meta name="description" content="Post a blood request and get matched with nearby donors instantly.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="preloader"><div class="preloader-content"><div class="heartbeat"><i class="fas fa-heartbeat"></i></div><p>Saving Lives...</p></div></div>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo"><i class="fas fa-heartbeat"></i><span>BloodFinder</span></a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="find-donor.html" class="nav-link">Find Donor</a></li>
+                <li class="nav-item"><a href="blood-request.html" class="nav-link active">Blood Request</a></li>
+                <li class="nav-item"><a href="register.html" class="nav-link">Register</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+    <section class="section" style="padding-top: 6rem;">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Post a Blood Request</h1>
+                <p class="section-subtitle">Request blood and get matched with nearby donors instantly</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="emergency-alert" style="margin-bottom: 2rem;">
+                    <div class="emergency-content">
+                        <div class="emergency-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="emergency-text">
+                            <h3>Emergency?</h3>
+                            <p>Need blood urgently? Send emergency alerts to nearby donors.</p>
+                        </div>
+                        <button class="btn btn-emergency" id="emergency-btn"><i class="fas fa-bell"></i> Send Emergency Alert</button>
+                    </div>
+                </div>
+                <form class="blood-search-form" id="blood-request-form" style="padding: 2rem; background: #fff; border-radius: var(--border-radius-lg); box-shadow: var(--shadow);">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--dark);">Blood Request Form</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="req-blood-group" class="required">Required Blood Group</label>
+                            <select id="req-blood-group" class="form-select" required>
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="req-quantity" class="required">Units Required</label>
+                            <input type="number" id="req-quantity" class="form-input" min="1" max="10" value="1" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="req-patient-name" class="required">Patient Name</label>
+                            <input type="text" id="req-patient-name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="req-patient-age" class="required">Patient Age</label>
+                            <input type="number" id="req-patient-age" class="form-input" min="0" max="120" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="req-location" class="required">Hospital / Location</label>
+                            <input type="text" id="req-location" class="form-input" placeholder="Enter hospital name or location" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="req-contact" class="required">Contact Number</label>
+                            <input type="tel" id="req-contact" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="req-address" class="required">Full Address</label>
+                        <textarea id="req-address" class="form-textarea" placeholder="Enter complete address" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="req-urgency">Urgency Level</label>
+                            <select id="req-urgency" class="form-select">
+                                <option value="normal">Normal</option>
+                                <option value="urgent" selected>Urgent</option>
+                                <option value="emergency">Emergency</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="req-date">Required By</label>
+                            <input type="date" id="req-date" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="req-reason">Medical Reason</label>
+                        <textarea id="req-reason" class="form-textarea" placeholder="Brief description of the medical condition"></textarea>
+                    </div>
+                    <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" id="req-emergency-alerts" checked>
+                        <label for="req-emergency-alerts" style="margin: 0;">Send emergency alerts to nearby donors</label>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-danger">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><i class="fas fa-heartbeat"></i><span>BloodFinder</span></a>
+                    <p>AI-powered blood donor finder saving lives through technology and community.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="find-donor.html">Find Donor</a></li><li><a href="blood-request.html">Blood Request</a></li><li><a href="register.html">Register</a></li></ul></div>
+                <div class="footer-links"><h4>Resources</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Donation Guidelines</a></li></ul></div>
+                <div class="footer-links"><h4>Contact Info</h4><ul><li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li><li><i class="fas fa-phone"></i> +91 1800-BLOOD-01</li><li><i class="fas fa-envelope"></i> info@bloodfinder.ai</li><li><i class="fas fa-clock"></i> 24/7 Emergency Support</li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 BloodFinder AI. All rights reserved. | Made with <i class="fas fa-heart"></i> for humanity</p></div>
+        </div>
+    </footer>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('blood-request-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Blood request submitted successfully! Nearby donors have been notified.');
+            window.location.href = 'find-donor.html';
+        });
+        document.getElementById('emergency-btn').addEventListener('click', function() {
+            alert('Emergency alert sent to all nearby donors!');
+        });
+    </script>
+</body>
+</html>
